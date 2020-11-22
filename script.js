@@ -15,8 +15,8 @@ function generatePassword() {
     // Prompt user for password criteria
     let upper = confirm("Would you like to include upper case letters?");
     let lower = confirm("Would you like to include lower case letters?");
-    let symbol = confirm("Would you like to include special characters?");
     let number = confirm("Would you like to include numbers?");
+    let symbol = confirm("Would you like to include special characters?");
     let allChars = "";
     let password = "";
 
@@ -29,14 +29,14 @@ function generatePassword() {
       allChars += "abcdefghijklmnopqrstuvwxyz";
     }
 
-    if (symbol) {
-      allChars += "~`!@#$%^&*()_-+={[}]}|\:;'<,>.?/";
-    }
-
     if (number) {
       allChars += "0123456789";
     }
 
+    if (symbol) {
+      allChars += "~`!@#$%^&*()_-+={[}]}|\:;'<,>.?/";
+    }
+    
     //Generate new password that fufills selected criteria
     for (i = 0; i < totalLength; i++) {
       password += allChars.charAt(Math.floor(Math.random() * allChars.length));
@@ -44,7 +44,7 @@ function generatePassword() {
     return password;} 
   
     else {
-    alert("Your password must be at least 8 to 24 characters. Let's try again.");
+    alert("Your password must be at least 8 to 128 characters & can include upper case, lower case, numbers, and/or special characters. Let's try again.");
   }
 }
 
