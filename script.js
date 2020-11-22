@@ -49,7 +49,7 @@ function generatePassword() {
 }
 
 // Display new password to the text area:
-function generatePassword() {
+function displayPassword() {
 
   let newPassword = generatePassword();
   let passwordText = document.querySelector("#password");
